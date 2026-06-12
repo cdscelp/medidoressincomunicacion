@@ -92,19 +92,30 @@
         }
 
         /* Mobile Menu Button */
-        .menu-toggle {
+        .mobile-only {
             display: none;
-            background: none;
-            border: none;
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px;
+            backdrop-filter: blur(8px);
+            z-index: 100;
             color: var(--text-main);
             cursor: pointer;
-            padding: 8px;
-            margin-right: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-only svg {
+            stroke: var(--text-main);
         }
         
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
+            .mobile-only {
+                display: flex !important;
             }
             #close-sidebar {
                 display: block !important;
@@ -401,17 +412,19 @@
 </head>
 <body>
 
+    <!-- Mobile menu button (outside sidebar) -->
+    <button id="menu-toggle" class="menu-toggle mobile-only" title="Menú">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <div class="sidebar" id="sidebar">
         <div class="header">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center;">
-                    <button id="menu-toggle" class="menu-toggle" title="Menú">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
                     <div>
                         <h1>Monitor de Medidores</h1>
                         <p>Estado de la red en tiempo real</p>
