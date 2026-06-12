@@ -238,7 +238,7 @@
             display: block;
             font-size: 14px;
             margin-bottom: 4px;
-            color: #fff;
+            color: var(--text-main);
         }
 
         /* Status colors */
@@ -308,6 +308,21 @@
         .popup-row span.val {
             flex: 1;
             color: #f8fafc;
+        }
+        
+        .maps-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .maps-link:hover {
+            background: #2563eb;
         }
         
         #empty-state {
@@ -610,6 +625,7 @@
 
                     const marker = L.marker([lat, lng], { icon: customIcon });
 
+                    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
                     const popupHtml = `
                         <div class="popup-content">
                             <h3>${item.MEDIDOR}</h3>
@@ -619,6 +635,7 @@
                             <div class="popup-row"><span class="label">Estado:</span><span class="val" style="color: ${markerColor}; font-weight: 600;">${item.ESTADO || '-'}</span></div>
                             <div class="popup-row"><span class="label">Fecha/Hora:</span><span class="val">${item['FECHA/HORA'] || '-'}</span></div>
                             <div class="popup-row"><span class="label">Observaciones:</span><span class="val">${item.OBSERVACIONES || '-'}</span></div>
+                            <a href="${googleMapsUrl}" target="_blank" class="maps-link">📍 Cómo llegar</a>
                         </div>
                     `;
 
