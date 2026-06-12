@@ -1,0 +1,255 @@
+Reporte de Terminales;;;;;;;;;;;;;;;;;;;;;;;
+Estado:;En Alarma;;;Medición:;;Todos;;Conectividad:;;;Todos;;;Instalación:;;;Todos;;;;;;
+Servicio:;Todos;;;Zona:;;Todos;;Estado Relé:;;;Todos;;;;;;;;;;;;
+;;;;;;;;Concentrador:;;;Todos;;;;;;;;;;;;
+Fase:;Todas;;;Subestación:;;Todas;;;;;;;;;;;;;;;;;
+Grupos Activos:;General;;;;;;;;;;;;;;;;;;;;;;
+Nro. de Serie;;Estado;Último Registro;;Concentrador;;Subestación;;Sum.;Titular;;Saldo UEE;Relé;;Fase;Periodicidad;;Conectividad;;Zona;CT;VT;
+DIGA00037046;;Terminal Sin Comunicación;26/05/26 06:30:00;;;;;;378;SOCORRO ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513383;;0;8;;120
+DIGA00037050;;Terminal Sin Comunicación;26/05/26 11:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158053642;;0;6;;120
+DIGA00038617;;Terminal Sin Comunicación;05/06/24 08:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;CLARO +5492477364645;;0;1;;1
+DIGA00045351;;Terminal Sin Comunicación;08/05/26 00:15:00;;;;002;;;Sin Suministro ;;;Cerrado;;N/D;15;;CLARO +5492477364688;;0;150;;1
+DIGA00047317;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525951;;0;10;;1
+DIGA00047327;;Terminal Sin Comunicación;20/04/26 09:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491155766171;;0;5;;120
+DIGA00081686;;Terminal Sin Comunicación;20/05/26 03:00:00;;;;;;965;La Vanguardia-Pearson ;;;Cerrado;;N/D;60;;M2M-MOVISTAR-AR-2 +5491155784727;;0;5;;120
+DIGA00082245;;Terminal Sin Comunicación;20/09/23 10:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491122972995;;0;40;;1
+DIGA00094661;;Terminal Sin Comunicación;11/06/26 08:00:00;;;;;;967;ALRA SOCIEDAD ANONIMA 144734;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123261663;;0;30;;1
+DIGA00096869;;Terminal Activo Sin Suministro;12/06/26 11:30:00;;;;SUB287;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525981;;0;40;;1
+DIGA00098868;;Terminal Sin Comunicación;06/06/26 17:30:00;;;;;;157;MECHITA  S A 71078;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525991;;0;3;;120
+DIGA00098883;;Terminal Sin Comunicación;14/04/26 13:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157088614;;0;60;;1
+DIGA00106795;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491169061353;;0;30;;1
+DIGA00106801;;Terminal Sin Comunicación;29/01/25 12:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525980;;0;1;;1
+DIGA00106802;;Terminal Activo Sin Suministro;12/06/26 11:30:00;;;;011;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491169291336;;0;300;;1
+DIGA00106818;;Terminal Sin Comunicación;16/05/26 07:45:00;;;;;;1182;Coop. Electrica Lta de Pearson ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165292705;;0;6;;120
+DIGA00106825;;Terminal Activo Sin Suministro;12/06/26 11:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165394742;;0;20;;300
+DIGA00114069;;Terminal Sin Comunicación;15/11/25 23:45:00;;;;;;1518;OBRAS SANITARIAS SUB 95 8839525;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157084716;;0;30;;1
+DIGA00118411;;Terminal Sin Comunicación;;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167004922;;0;1;;1
+DIGA00119073;;Terminal Sin Comunicación;20/03/23 07:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167027706;;0;1;;1
+DIGA00119075;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;256;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165477919;;0;500;;1
+DIGA00150966;;Terminal Sin Comunicación;10/05/26 08:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170407461;;0;3;;120
+DIGA00150969;;Terminal Sin Comunicación;05/05/26 09:45:00;;;;;;380;SOVICA ACEROS S.A 121757;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156943297;;0;5;;120
+DIGA00157261;;Terminal Sin Comunicación;07/05/25 07:15:00;;;;;;1906;Municipalidad de Pergamino 395247;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156982290;;0;40;;1
+DIWA00106921;;Terminal Sin Comunicación;09/03/23 10:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DIWA00106922;;Terminal Sin Comunicación;09/03/23 10:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DIWA00106923;;Terminal Sin Comunicación;25/06/25 08:30:00;;;;;;1220;MUNICIPALIDAD DE PERGAMINO 85032;;;Cerrado;;N/D;10;;WIFI;;0;50;;1
+DIWA00106924;;Terminal Sin Comunicación;09/03/23 10:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DIWA00106925;;Terminal Sin Comunicación;09/03/23 10:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMGA00031014;;Terminal Sin Comunicación;31/03/26 06:30:00;;;;;;58;Dell Oso Matias Esequiel 111224;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431443;;0;1;;1
+DMGA00031726;;Terminal Sin Comunicación;06/05/26 02:00:00;;;;;;31;Vignetta Gaston Oscar 135393;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431409;;0;1;;1
+DMGA00031747;;Terminal Sin Comunicación;29/12/19 07:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431442;;0;1;;1
+DMGA00031748;;Terminal Sin Comunicación;28/04/25 07:15:00;;;;;;60;Taddei Nelida Merdedes  ex Pizzi 113489;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431446;;0;1;;1
+DMGA00031789;;Terminal Sin Comunicación;12/04/24 09:45:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431408;;0;1;;1
+DMGA00031804;;Terminal Sin Comunicación;18/09/23 07:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431479;;0;1;;1
+DMGA00031818;;Terminal Sin Comunicación;07/06/21 13:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431480;;0;1;;1
+DMGA00040646;;Terminal Sin Comunicación;17/02/22 08:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123274410;;0;1;;1
+DMGA00040647;;Terminal Sin Comunicación;15/08/25 05:00:00;;;;;;303;Escuela N° 16 Ciriaco Morea (Colon) 68692;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525956;;0;1;;1
+DMGA00040649;;Terminal Sin Comunicación;06/01/21 07:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513359;;0;1;;1
+DMGA00040673;;Terminal Sin Comunicación;28/11/23 13:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;CLARO +5492477333687;;0;1;;1
+DMGA00043007;;Terminal Sin Comunicación;20/09/25 18:45:00;;;;;;115;Fiorio Pedro y Fiorio Andres 12758;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491169222524;;0;1;;1
+DMGA00043011;;Terminal Sin Comunicación;14/04/26 19:00:00;;;;;;1881;Gigena Diego Matias 1150711;;;Abierto;;N/D;15;;M2M-MOVISTAR-AR-2 +5492477364658;;0;1;;1
+DMGA00043014;;Terminal Sin Comunicación;02/09/25 08:15:00;;;;;;317;Alpagro S.A. 73314;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158077146;;0;1;;1
+DMGA00043087;;Terminal Sin Comunicación;01/01/22 09:45:00;;;;;;307;CONEXPOR S.A 67678;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491161465929;;0;1;;1
+DMGA00043088;;Terminal Sin Comunicación;18/01/22 09:30:00;;;;;;308;CONEXPOR S.A 67679;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491161466083;;0;1;;1
+DMGA00043089;;Terminal Sin Comunicación;14/04/24 19:15:00;;;;;;255;Sanchez Jose Miguel 67643;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513361;;0;1;;1
+DMGA00046086;;Terminal Sin Comunicación;22/04/26 03:30:00;;;;;;1866;Viera Hernan 1240921;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170364370;;0;1;;1
+DMGA00046090;;Terminal Sin Comunicación;04/11/25 07:00:00;;;;;;21;Sijoma S.A 84360;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170337898;;0;1;;1
+DMGA00046107;;Terminal Sin Comunicación;04/04/26 13:15:00;;;;;;1329;MARJOMA S.A. 000670571;;;Cerrado;;N/D;15;;M2M-CLARO-AR +5492477364699;;0;1;;1
+DMGA00046109;;Terminal Sin Comunicación;25/05/23 16:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431427;;0;1;;1
+DMGA00046110;;Terminal Sin Comunicación;24/10/25 00:15:00;;;;;;217;Roca Francisco 67350;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156694289;;0;1;;1
+DMGA00049361;;Terminal Sin Comunicación;27/04/26 07:15:00;;;;;;1844;USERO RUBEN EDGADO 1025561;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5492477364686;;0;1;;1
+DMGA00049362;;Terminal Sin Comunicación;07/04/26 12:30:00;;;;;;1907;El Otoño S.A. 1247511;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167320770;;0;1;;1
+DMGA00049370;;Terminal Sin Comunicación;26/06/18 09:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525987;;0;1;;1
+DMGA00049381;;Terminal Sin Comunicación;17/01/26 23:15:00;;;;;;1615;CARNEVALE SUSANA BEATRIZ 494081;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123262568;;0;1;;1
+DMGA00049383;;Terminal Sin Comunicación;11/03/24 23:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;CLARO +5492477333605;;0;1;;1
+DMGA00049387;;Terminal Sin Comunicación;05/12/23 16:15:00;;;;;;32;Santa Rosa S.A. 12750;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157001230;;0;1;;1
+DMGA00049398;;Terminal Sin Comunicación;02/09/25 12:45:00;;;;;;305;CONEXPOR S.A 67677;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156580985;;0;1;;1
+DMGA00049399;;Terminal Sin Comunicación;26/04/25 12:15:00;;;;;;232;Balague Hugo Demetrio 122786;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491122972373;;0;1;;1
+DMGA00049400;;Terminal Sin Comunicación;23/08/22 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165369811;;0;1;;1
+DMGA00049402;;Terminal Sin Comunicación;26/12/25 12:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170224298;;0;1;;1
+DMGA00049403;;Terminal Sin Comunicación;29/04/26 04:00:00;;;;;;224;Escuela Nº 36 Paraje Santa Rosa 68693;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525984;;0;1;;1
+DMGA00049404;;Terminal Sin Comunicación;10/06/26 12:30:00;;;;;;501;OLLEROS CRIMAI SRL 180361;;;Abierto;;N/D;15;;M2M-MOVISTAR-AR-2 +5491161883659;;0;1;;1
+DMGA00049410;;Terminal Sin Comunicación;02/11/22 17:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157931772;;0;1;;1
+DMGA00049411;;Terminal Sin Comunicación;09/06/23 15:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170239400;;0;1;;1
+DMGA00049413;;Terminal Sin Comunicación;06/05/26 18:30:00;;;;;;26;Municip. de Pergamino Alum. Publico 79442;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170239761;;0;1;;1
+DMGA00049414;;Terminal Sin Comunicación;20/03/26 23:45:00;;;;;;427;MARCHISELLA SANDRA CARINA 126317;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156581058;;0;1;;1
+DMGA00049463;;Terminal Sin Comunicación;21/10/21 08:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431469;;0;1;;1
+DMGA00049464;;Terminal Sin Comunicación;10/01/25 10:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156524623;;0;1;;1
+DMGA00049958;;Terminal Sin Comunicación;20/11/25 12:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170239774;;0;1;;1
+DMGA00049960;;Terminal Sin Comunicación;31/05/26 08:15:00;;;;;;922;CIVERCHIA LUIS NAZARENO 52365;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123020088;;0;1;;1
+DMPA00036585;;Terminal Sin Comunicación;23/08/25 08:45:00;;DCCA00011750;;;;1910;Salse Sofia 1026702;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00036685;;Terminal Activo Sin Suministro;07/05/26 16:45:00;;DCCA00011224;;;;;Sin Suministro ;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00036688;;Terminal Sin Comunicación;05/01/24 10:45:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00036689;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;DCCA00011224;;;;;Sin Suministro ;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00036690;;Terminal Sin Comunicación;09/10/25 22:30:00;;DCCA00011224;;;;;Sin Suministro ;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00036757;;Terminal Sin Comunicación;11/11/25 08:45:00;;DCCA00011174;;;;1545;SERVINO MARTIN 00100661;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00036758;;Terminal Sin Comunicación;13/10/25 07:45:00;;DCCA00011572;;;;1532;OLIVERO LUCAS CESAR 1141941;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00036766;;Terminal Sin Comunicación;08/06/26 00:45:00;;DCCA00011224;;;;108;Maccagno Hector Alberto 33421;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00036787;;Terminal Sin Comunicación;29/09/23 10:00:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038554;;Terminal Sin Comunicación;08/01/24 11:45:00;;DCCA00011656;;;;1932;SALVI SILVIA 762641;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038560;;Terminal Sin Comunicación;22/08/25 05:00:00;;DCCA00011549;;;;472;QUIROGA LEONEL DARIO 177893;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00038561;;Terminal Sin Comunicación;27/09/24 18:15:00;;DCCA00011224;;;;139;LAVEZZARI RENNE OSCAR 71116;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038562;;Terminal Sin Comunicación;19/07/25 13:00:00;;DCCA00011324;;16;;1562;CASTELLARI NELIDA ELVIA 97153140358;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00038566;;Terminal Sin Comunicación;28/07/23 11:45:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038567;;Terminal Sin Comunicación;01/05/22 16:00:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038578;;Terminal Sin Comunicación;06/11/25 08:00:00;;DCCA00011549;;;;408;CASA ROMERO S.R.L 132247;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00038579;;Terminal Sin Comunicación;21/07/25 07:15:00;;DCCA00011549;;;;422;LOS PORTUGUESES S A 181451;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00038585;;Terminal Sin Comunicación;07/01/24 19:15:00;;DCCA00011224;;;;1898;Klug Hector Nemecio 1245181;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00038586;;Terminal Sin Comunicación;31/03/26 21:45:00;;DCCA00011224;;;;137;GRIGERA JORGE ALBERTO 57853;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00043142;;Terminal Sin Comunicación;17/08/22 11:00:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00043174;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;DCCA00011324;;16;;465;LAVEZZARI Y OTRO 18474;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00077191;;Terminal Sin Comunicación;10/05/24 09:15:00;;DCCA00011750;;;;1032;OJEDA CLAUDIO EZEQUI 181914;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00077200;;Terminal Sin Comunicación;18/02/26 07:30:00;;DCCA00011750;;;;929;LOPEZ SANDRA ESTER   143873;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00077473;;Terminal Sin Comunicación;19/02/25 08:15:00;;DCCA00011610;;;;897;BUSTAMANTE DIEGO HER 181821;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00077481;;Terminal Sin Comunicación;21/07/25 09:45:00;;DCCA00011628;;;;1574;FALCATO FRANCO ALAN JESUS 1200981;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00077520;;Terminal Sin Comunicación;06/02/26 06:00:00;;DCCA00011632;;;;716;BONACALZA FLORENCIA EVANGELINA 185177;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00077531;;Terminal Sin Comunicación;26/06/25 09:15:00;;DCCA00011610;;;;1083;MATIAS VALENTIN  ROC 1164941;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00077555;;Terminal Sin Comunicación;14/01/26 18:00:00;;DCCA00011610;;;;878;TESSORE MARISA ELSA  63146;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00077591;;Terminal Sin Comunicación;11/04/25 08:00:00;;DCCA00011632;;;;1862;Zeballos Rolando Andres 1210212;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00077613;;Terminal Sin Comunicación;26/08/25 07:15:00;;DCCA00011632;;;;600;BENAVIDEZ BEATRIZ LUJAN 114137;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00077620;;Terminal Sin Comunicación;14/04/26 08:15:00;;DCCA00011576;;;;;Sin Suministro ;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00082360;;Terminal Sin Comunicación;09/05/23 07:00:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082579;;Terminal Sin Comunicación;24/06/25 10:00:00;;DCCA00011661;;;;1685;CASTAÑARES CARINA ELISABET 824201;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00082584;;Terminal Sin Comunicación;04/06/26 01:30:00;;DCCA00011324;;16;;1179;OLLEROS CRIMAI S R L 101902180361;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00082590;;Terminal Sin Comunicación;15/05/26 12:00:00;;DCCA00011549;;;;496;TOLESANO MAURICIO 140057;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00082593;;Terminal Sin Comunicación;19/02/23 19:00:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082594;;Terminal Sin Comunicación;26/10/23 01:30:00;;DCCA00011479;;;;718;PruebaIntegracion    19999999999999999991;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082642;;Terminal Sin Comunicación;15/08/24 07:45:00;;DCCA00011750;;;;1571;DE IRAOLA ENZO MARTIN 1200511;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082646;;Terminal Sin Comunicación;16/01/26 08:00:00;;DCCA00011572;;;;1942;Veron Esteban Bautista 1252121;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMPA00082650;;Terminal Sin Comunicación;19/02/25 08:30:00;;DCCA00011324;;16;;1375;CARRASQUERA PATRICIA DEL LUJAN 000648611;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00082692;;Terminal Sin Comunicación;24/06/25 09:45:00;;DCCA00011324;;16;;1154;GAITAN.ALEJANDRA L. 001173191;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00082699;;Terminal Sin Comunicación;24/06/25 09:15:00;;DCCA00011610;;;;1110;PERUZZI RAUL EDUARDO 90164/1;;;Abierto;;N/D;;;PLC;;0;1;;1
+DMPA00082705;;Terminal Sin Comunicación;;;;;;;1723;Britos Maria Belen  1221241;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082714;;Terminal Sin Comunicación;10/07/23 11:15:00;;DCCA00011479;;;;;Sin Suministro ;;;S/D;;N/D;;;PLC;;0;1;;1
+DMPA00082740;;Terminal Sin Comunicación;16/03/26 08:30:00;;DCCA00011610;;;;1454;VILLA FRANCA MARIA FLORENCIA 1143321;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DMWA00098392;;Terminal Sin Comunicación;21/05/24 13:30:00;;;;;;1646;REGISTRADOR 6 CELP3;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00098393;;Terminal Sin Comunicación;05/01/26 11:30:00;;;;;;1401;MICHELONI SANDRA DENISE 46042100969;;;Cerrado;;N/D;10;;WIFI;;0;1;;1
+DMWA00098396;;Terminal Sin Comunicación;14/03/23 03:00:00;;;;;;1645;REGISTRADOR 5 CELP2;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00098397;;Terminal Sin Comunicación;13/08/24 07:30:00;;;;;;1644;REGISTRADOR 4 CELP1;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113906;;Terminal Sin Comunicación;26/06/25 10:45:00;;;;;;1541;PARRA FLORENCIA SOFIA 001199071;;;Abierto;;N/D;10;;WIFI;;0;1;;1
+DMWA00113912;;Terminal Sin Comunicación;26/02/24 08:30:00;;;;;;1647;REGISTRADOR 9 CELP4;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113913;;Terminal Sin Comunicación;13/10/22 07:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113914;;Terminal Sin Comunicación;10/03/23 06:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113923;;Terminal Sin Comunicación;09/03/23 07:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113927;;Terminal Sin Comunicación;13/10/22 13:45:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113930;;Terminal Sin Comunicación;;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00113937;;Terminal Sin Comunicación;06/11/25 08:00:00;;;;;;1495;VALVERDE CESIA ALEJANDRA 1184081;;;Abierto;;N/D;10;;WIFI;;0;1;;1
+DMWA00123851;;Terminal Sin Comunicación;28/06/23 09:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123852;;Terminal Sin Comunicación;28/06/23 09:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123853;;Terminal Sin Comunicación;28/06/23 09:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123854;;Terminal Sin Comunicación;28/06/23 09:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123855;;Terminal Sin Comunicación;28/06/23 09:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123856;;Terminal Sin Comunicación;29/07/24 12:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123857;;Terminal Sin Comunicación;28/06/23 09:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123858;;Terminal Sin Comunicación;29/07/24 12:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123859;;Terminal Sin Comunicación;28/06/23 09:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123860;;Terminal Sin Comunicación;28/06/23 10:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123861;;Terminal Sin Comunicación;26/07/24 14:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123862;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123863;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123864;;Terminal Sin Comunicación;29/07/24 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123865;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123866;;Terminal Sin Comunicación;11/01/25 07:30:00;;;;;;1705;CLERC GABRIELA JOSEFA 1188291;;;Cerrado;;N/D;10;;WIFI;;0;1;;1
+DMWA00123867;;Terminal Sin Comunicación;26/07/24 14:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123868;;Terminal Sin Comunicación;28/06/23 14:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123869;;Terminal Sin Comunicación;29/07/24 10:45:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00123870;;Terminal Sin Comunicación;28/06/23 14:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125741;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125742;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125743;;Terminal Sin Comunicación;28/06/23 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125744;;Terminal Sin Comunicación;29/07/24 13:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125746;;Terminal Sin Comunicación;29/07/24 12:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125747;;Terminal Sin Comunicación;28/06/23 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125748;;Terminal Sin Comunicación;28/06/23 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125749;;Terminal Sin Comunicación;28/06/23 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DMWA00125750;;Terminal Sin Comunicación;28/06/23 11:00:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTGA00036854;;Terminal Activo Sin Suministro;12/06/26 11:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431439;;0;1;;1
+DTGA00036860;;Terminal Sin Comunicación;08/09/25 12:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431456;;0;1;;1
+DTGA00036863;;Terminal Sin Comunicación;13/02/25 04:45:00;;;;;;51;Ballhorst Nidia Carmen 105498;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431417;;0;1;;1
+DTGA00036865;;Terminal Sin Comunicación;15/02/26 06:00:00;;;;;;47;Municipalidad de Pergamino (Alum. Publico) 79441;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431419;;0;1;;1
+DTGA00036866;;Terminal Sin Comunicación;01/05/26 08:45:00;;;;;;24;Taddei Hermanos 12766;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431453;;0;1;;1
+DTGA00036868;;Terminal Sin Comunicación;10/06/26 11:00:00;;;;;;1361;BID ARGENTINA SA 000876981;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156582713;;0;1;;1
+DTGA00036869;;Terminal Sin Comunicación;14/04/24 02:45:00;;;;;;306;Alpagro S.A. 67706;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167196138;;0;1;;1
+DTGA00038796;;Terminal Sin Comunicación;21/09/25 13:45:00;;;;;;49;Petroni Ricardo Hector 12768;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491122950757;;0;1;;1
+DTGA00039527;;Terminal Activo Sin Suministro;05/06/26 21:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525976;;0;1;;1
+DTGA00039587;;Terminal Sin Comunicación;08/03/24 19:15:00;;;;;;373;Grupo Tranqueras Blancas S.A. 180271;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170525962;;0;1;;1
+DTGA00039589;;Terminal Sin Comunicación;18/05/26 03:45:00;;;;;;214;Ocampo Maria Angélica 67695;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165382299;;0;1;;1
+DTGA00039590;;Terminal Sin Comunicación;20/08/25 07:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5492477364706;;0;1;;1
+DTGA00039949;;Terminal Sin Comunicación;06/05/26 16:45:00;;;;097;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513367;;0;1;;1
+DTGA00039970;;Terminal Sin Comunicación;21/12/25 02:00:00;;;;;;323;Banco Provincia Buenos Aires 131918;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR +5491123616358;;0;1;;1
+DTGA00040008;;Terminal Sin Comunicación;07/05/26 20:15:00;;;;;;221;TOSI MAXIMILIANO 1177701;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491131897804;;0;1;;1
+DTGA00040378;;Terminal Sin Comunicación;08/06/26 22:15:00;;;;;;202;La Troup S.A. 74051;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167241321;;0;1;;1
+DTGA00040379;;Terminal Sin Comunicación;21/11/25 08:00:00;;;;;;1745;Telecom Argentina S.A. 841381;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513370;;0;1;;1
+DTGA00040380;;Terminal Sin Comunicación;06/06/26 22:15:00;;;;;;557;MARTINICA SA 97088;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167128094;;0;1;;1
+DTGA00041592;;Terminal Sin Comunicación;29/08/25 12:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170224299;;0;1;;1
+DTGA00041594;;Terminal Sin Comunicación;28/02/20 11:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;CLARO +5492477588694;;0;1;;1
+DTGA00043461;;Terminal Sin Comunicación;09/10/25 08:00:00;;;;;;436;Giacobone Isolina e Hijos 67791;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170383890;;0;1;;1
+DTGA00043523;;Terminal Sin Comunicación;17/07/25 16:15:00;;;;;;1257;CORREO OFICIAL DE LA RUP ARGENT S.A 90051187983;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123260786;;0;1;;1
+DTGA00043527;;Terminal Sin Comunicación;15/10/25 21:30:00;;;;;;262;Grigera Jorge Alberto 67140;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491155764615;;0;1;;1
+DTGA00043837;;Terminal Sin Comunicación;02/06/26 06:00:00;;;;;;296;Guarda Pampa S.A. 85535;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158129543;;0;1;;1
+DTGA00043841;;Terminal Sin Comunicación;06/06/26 08:15:00;;;;;;233;Estancia San Federico S.H. 67150;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158137438;;0;1;;1
+DTGA00043844;;Terminal Sin Comunicación;09/02/26 09:00:00;;;;;;1578;PICCOLI MIGUEL ANGEL 316221;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167531920;;0;1;;1
+DTGA00043849;;Terminal Sin Comunicación;07/05/26 01:45:00;;;;;;953;OBRAS SANITARIAS-POZO Nº 76 181796;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123629780;;0;1;;1
+DTGA00043854;;Terminal Sin Comunicación;27/10/25 03:45:00;;;;;;234;Monsanto Argentina S.A.I.C 136769;;;Cerrado;;N/D;15;;CLARO +5492477587899;;0;1;;1
+DTGA00043855;;Terminal Sin Comunicación;23/10/24 09:30:00;;;;;;216;Municipalidad de Colon 105736;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158032864;;0;1;;1
+DTGA00043861;;Terminal Sin Comunicación;08/06/26 12:45:00;;;;;;325;Grilli Lucas Pedro 86478;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158143246;;0;1;;1
+DTGA00043866;;Terminal Sin Comunicación;11/06/26 02:30:00;;;;;;256;Agro Milfra S.A. 105951;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491161852667;;0;1;;1
+DTGA00043873;;Terminal Sin Comunicación;26/04/26 01:30:00;;;;;;236;Fontoba Víctor Ramón 83011;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123617483;;0;1;;1
+DTGA00043874;;Terminal Sin Comunicación;28/02/23 08:45:00;;;;;;362;Palou Maria Ines 177370;;;S/D;;N/D;15;;CLARO +5492477368412;;0;1;;1
+DTGA00044271;;Terminal Sin Comunicación;10/06/26 12:00:00;;;;;;184;CHOIKE S A 91596;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156534896;;0;1;;1
+DTGA00055593;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;CLARO +5491162895819;;0;1;;1
+DTGA00063836;;Terminal Sin Comunicación;11/10/19 11:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;; ;;0;1;;1
+DTGA00074789;;Terminal Sin Comunicación;10/05/26 23:45:00;;;;;;438;Falcinelli Gerardo Miguel 58927;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513363;;0;1;;1
+DTGA00074790;;Terminal Sin Comunicación;06/04/26 10:15:00;;;;;;439;Cangiaso Oscar Alfredo 101028;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513386;;0;1;;1
+DTGA00074791;;Terminal Sin Comunicación;31/01/24 08:00:00;;;;;;954;ALUMBRADO SUB 209 903952;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491123365041;;0;1;;1
+DTGA00074795;;Terminal Sin Comunicación;21/10/22 11:45:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491155760129;;0;1;;1
+DTGA00079085;;Terminal Sin Comunicación;09/02/26 09:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491169502047;;0;1;;1
+DTGA00079086;;Terminal Sin Comunicación;15/10/24 08:15:00;;;;;;1591;SOLABERRIETA EDGARDO JULIO 1202161;;;Abierto;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165321340;;0;1;;1
+DTGA00079092;;Terminal Sin Comunicación;24/01/25 07:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167522973;;0;1;;1
+DTGA00079104;;Terminal Sin Comunicación;02/04/26 19:30:00;;;;;;63;Testa Jose Luis 81818;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157085254;;0;1;;1
+DTGA00079155;;Terminal Sin Comunicación;10/06/26 11:45:00;;;;;;1716;Buxman Adalberto David 1086351;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167611814;;0;1;;1
+DTGA00079158;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167639280;;0;1;;1
+DTGA00079166;;Terminal Sin Comunicación;22/04/26 21:00:00;;;;;;11;Establecimiento Agropecuario La Delfina 127993;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167452211;;0;1;;1
+DTGA00079169;;Terminal Sin Comunicación;10/06/26 11:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165409716;;0;1;;1
+DTGA00080142;;Terminal Sin Comunicación;09/06/26 07:15:00;;;;;;69;Luelles Jose Antonio 86485;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170513372;;0;1;;1
+DTGA00080143;;Terminal Sin Comunicación;08/09/25 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156688491;;0;1;;1
+DTGA00103742;;Terminal Sin Comunicación;16/03/23 08:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491165435725;;0;1;;1
+DTGA00103746;;Terminal Sin Comunicación;07/05/26 19:45:00;;;;;;1564;DE VEZ EN CUANDO LA VIDA SAS 001182841;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170304116;;0;1;;1
+DTGA00104175;;Terminal Activo Sin Suministro;12/06/26 11:15:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170440366;;0;1;;1
+DTGA00159422;;Terminal Sin Comunicación;03/05/26 00:30:00;;;;;;45;Civerchia Mario Ernesto 94582;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170362316;;0;1;;1
+DTGA00159425;;Terminal Sin Comunicación;10/12/25 22:15:00;;;;;;1753;Municipalidad de Pergamino 3952184485;;;Cerrado;;N/D;15;;CLARO +5491170311323;;0;1;;1
+DTGA00162202;;Terminal Sin Comunicación;10/06/26 08:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491157955423;;0;1;;1
+DTGA00162204;;Terminal Sin Comunicación;02/06/26 23:00:00;;;;;;212;Capriotti Santo Domingo 76973;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431428;;0;1;;1
+DTGA00162205;;Terminal Sin Comunicación;28/11/25 12:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170233578;;0;1;;1
+DTGA00162211;;Terminal Sin Comunicación;15/11/25 11:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491140445921;;0;1;;1
+DTGA00162212;;Terminal Sin Comunicación;10/06/26 08:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167455985;;0;1;;1
+DTGA00162213;;Terminal Sin Comunicación;10/06/26 08:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156958284;;0;1;;1
+DTGA00162220;;Terminal Sin Comunicación;09/06/26 10:45:00;;;;;;1802;Sofeva Soluciones 1115631;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167495923;;0;1;;1
+DTGA00178362;;Terminal Sin Comunicación;;;;;;;1870;Telecom Argentina S.A. 841316;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170254030;;0;1;;1
+DTGA00178363;;Terminal Sin Comunicación;22/03/26 07:15:00;;;;;;335;Raymundo Nelson Daniel 143592;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167308461;;0;1;;1
+DTGA00178364;;Terminal Sin Comunicación;16/02/26 08:30:00;;;;;;1216;GUARDA PAMPA S.A. 86325;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167315490;;0;1;;1
+DTGA00178365;;Terminal Sin Comunicación;21/12/25 06:30:00;;;;;;35;Garay Jose Alberto 51763;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167331860;;0;1;;1
+DTGA00178396;;Terminal Sin Comunicación;;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491140443867;;0;1;;1
+DTGA00178397;;Terminal Sin Comunicación;;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167186141;;0;1;;1
+DTGA00178398;;Terminal Sin Comunicación;20/04/26 11:00:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156236888;;0;1;;1
+DTGA00178399;;Terminal Activo Sin Suministro;12/06/26 11:30:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491156236050;;0;1;;1
+DTGA00178400;;Terminal Sin Comunicación;10/06/26 10:45:00;;;;;;;Sin Suministro ;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170431448;;0;1;;1
+DTGA00178561;;Terminal Sin Comunicación;02/12/25 13:15:00;;;;;;1804;La Angelita de Michetti S.A. 120212;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167573650;;0;1;;1
+DTGA00178564;;Terminal Sin Comunicación;29/01/26 02:00:00;;;;;;20;Gennero Hermanos 12786;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491167206036;;0;1;;1
+DTGA00185631;;Terminal Sin Comunicación;;;;;;;;Sin Suministro ;;;S/D;;N/D;15;;M2M-MOVISTAR-AR-2 +5491158063839;;0;1;;1
+DTGA00185661;;Terminal Sin Comunicación;12/05/26 12:00:00;;;;;;1459;Cubino Walter Jose 1190881;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170239502;;0;1;;1
+DTGA00185663;;Terminal Sin Comunicación;26/04/26 20:45:00;;;;;;1900;Municipalidad Obra sanitaria 88395211;;;Cerrado;;N/D;15;;M2M-MOVISTAR-AR-2 +5491170239746;;0;1;;1
+DTPA00040776;;Terminal Sin Comunicación;29/04/25 08:30:00;;DCCA00011549;;;;403;MORENO JUAN Y MORENO MANUEL SH 144652;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DTPA00076201;;Terminal Sin Comunicación;;;;;;;1945;Farmacity S.A. 1087911;;;S/D;;N/D;;;PLC;;0;1;;1
+DTPA00078160;;Terminal Sin Comunicación;18/05/26 23:45:00;;DCCA00011578;;;;643;SPORTS FAMILY SA  104123;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DTPA00078184;;Terminal Sin Comunicación;10/06/26 07:00:00;;DCCA00011660;;;;645;PACHECO VIRGINIA 106019;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DTPA00078194;;Terminal Sin Comunicación;14/05/25 13:30:00;;DCCA00011610;;;;837;CALDERONE JOSE RAMON 120757;;;Cerrado;;N/D;;;PLC;;0;1;;1
+DTPA00078204;;Terminal Sin Comunicación;19/10/23 10:00:00;;DCCA00011610;;;;906;FUENTES ANDRES ALBER 18931;;;S/D;;N/D;;;PLC;;0;1;;1
+DTWA00084676;;Terminal Sin Comunicación;06/12/21 11:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084677;;Terminal Sin Comunicación;06/12/21 11:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084678;;Terminal Sin Comunicación;28/04/23 10:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084679;;Terminal Sin Comunicación;06/12/21 11:45:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084681;;Terminal Sin Comunicación;27/04/23 09:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084683;;Terminal Sin Comunicación;27/04/23 09:15:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084684;;Terminal Sin Comunicación;06/12/21 11:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+DTWA00084685;;Terminal Sin Comunicación;27/04/23 09:30:00;;;;;;;Sin Suministro ;;;S/D;;N/D;10;;WIFI;;0;1;;1
+;;;;;;;;;;;;;;;;;;;1/1;;;;
