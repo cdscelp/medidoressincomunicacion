@@ -77,6 +77,50 @@
             color: var(--text-muted);
         }
 
+        /* Theme Toggle Button */
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+        .theme-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Light Theme */
+        body.light-theme {
+            --bg-dark: #f1f5f9;
+            --bg-panel: rgba(255, 255, 255, 0.9);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+        body.light-theme .sidebar {
+            box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+        }
+        body.light-theme .medidor-item {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        body.light-theme .medidor-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--accent-blue);
+        }
+        body.light-theme .kpi-card,
+        body.light-theme .search-input {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(0,0,0,0.1);
+        }
+        body.light-theme .header h1 {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
         /* File Upload */
         .upload-container {
             margin-bottom: 24px;
@@ -288,18 +332,17 @@
 
     <div class="sidebar">
         <div class="header">
-            <h1>Monitor de Medidores</h1>
-            <p>Estado de la red en tiempo real</p>
-        </div>
-
-        <div class="upload-container">
-            <label for="csv-upload" class="upload-label">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-                </svg>
-                Cargar archivo CSV
-            </label>
-            <input type="file" id="csv-upload" accept=".csv">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>Monitor de Medidores</h1>
+                    <p>Estado de la red en tiempo real</p>
+                </div>
+                <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
+                    <svg id="theme-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="kpi-container">
@@ -384,6 +427,37 @@
         let markersGroup;
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                const isLight = document.body.classList.contains('light-theme');
+                
+                // Save preference
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                
+                // Update icon
+                if (isLight) {
+                    themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+                } else {
+                    themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+                }
+                
+                // Refresh markers to update cluster icons
+                if (markersGroup) {
+                    markersGroup.refreshClusters();
+                }
+            });
+
             // Initialize Map with street tiles
             map = L.map('map').setView([-33.89, -60.57], 11); 
             
@@ -394,8 +468,9 @@
 
             markersGroup = L.markerClusterGroup({
                 iconCreateFunction: function(cluster) {
+                    const isLight = document.body.classList.contains('light-theme');
                     return L.divIcon({ 
-                        html: '<div style="background: rgba(59, 130, 246, 0.8); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.5);">' + cluster.getChildCount() + '</div>',
+                        html: '<div style="background: rgba(59, 130, 246, 0.8); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid ' + (isLight ? '#fff' : 'white') + '; box-shadow: 0 0 10px rgba(0,0,0,0.5);">' + cluster.getChildCount() + '</div>',
                         className: 'custom-cluster-icon', 
                         iconSize: L.point(40, 40) 
                     });
@@ -405,8 +480,8 @@
 
             // Mostrar estado de carga
             document.getElementById('empty-state').innerHTML = `
-                <h2>Conectando con Google Drive...</h2>
-                <p>Descargando datos del archivo CSV público...</p>
+                <h2>Cargando datos...</h2>
+                <p>Conectando con el servidor...</p>
             `;
 
             // Auto-load CSV from GitHub
@@ -420,43 +495,10 @@
                         <h2>Error al cargar datos</h2>
                         <p style="font-size: 14px; margin-top: 10px; line-height: 1.6;">
                         Error: ${err.message}<br><br>
-                        <strong>Solución:</strong> Verificá que la URL del archivo CSV en el código sea correcta.<br>
-                        También podés cargar el archivo manualmente haciendo clic en <strong>"Cargar archivo CSV"</strong>.<br><br>
                         <button onclick="location.reload()" style="padding: 8px 16px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer;">Reintentar</button>
                         </p>
                     `;
                 });
-
-            // Handle manual CSV upload (bypasses CORS restrictions)
-            const csvUpload = document.getElementById('csv-upload');
-            if (csvUpload) {
-                csvUpload.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    if (!file) return;
-
-                    // Show temporary loading state
-                    const emptyState = document.getElementById('empty-state');
-                    emptyState.style.display = 'block';
-                    emptyState.innerHTML = `
-                        <h2>Procesando Archivo...</h2>
-                        <p>Cargando los datos del archivo seleccionado...</p>
-                    `;
-
-                    const reader = new FileReader();
-                    reader.onload = function(evt) {
-                        const text = evt.target.result;
-                        parseCSV(text);
-                    };
-                    reader.onerror = function(evt) {
-                        console.error("Error al leer el archivo:", evt);
-                        alert("Hubo un error al leer el archivo CSV.");
-                        emptyState.style.display = 'block';
-                        emptyState.innerHTML = `<h2>Error al leer archivo</h2><p>Por favor intenta de nuevo.</p>`;
-                    };
-                    // Read file content with proper encoding (iso-8859-1) for accents/special characters
-                    reader.readAsText(file, 'iso-8859-1');
-                });
-            }
 
             // Search input listener
             const searchInput = document.getElementById('search-input');
