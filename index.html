@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Medidores CaÃ­dos</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    
+    <!-- MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-panel: rgba(30, 41, 59, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-red: #ef4444;
+            --accent-yellow: #eab308;
+            --accent-blue: #3b82f6;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        /* Sidebar Container */
+        .sidebar {
+            width: 350px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            z-index: 1000;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+            overflow-y: auto;
+        }
+
+        .header {
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* File Upload */
+        .upload-container {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px dashed var(--accent-blue);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .upload-container:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .upload-label {
+            display: block;
+            cursor: pointer;
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .upload-label svg {
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        #csv-upload {
+            display: none;
+        }
+
+        /* KPI Cards */
+        .kpi-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .kpi-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .kpi-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Search Box */
+        .search-container {
+            margin-bottom: 16px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.6);
+            color: var(--text-main);
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        /* List container */
+        .list-header {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .medidor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .medidor-item {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .medidor-item:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--accent-blue);
+        }
+
+        .medidor-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        /* Status colors */
+        .status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .status-sc { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+        .status-la { background: rgba(234, 179, 8, 0.2); color: var(--accent-yellow); }
+        .status-other { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+
+        /* Map Container */
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            background-color: #e5e5e5;
+        }
+
+        /* Leaflet Overrides */
+        .leaflet-popup-content-wrapper {
+            background: rgba(30, 41, 59, 0.95) !important;
+            backdrop-filter: blur(8px);
+            color: #fff !important;
+            border-radius: 12px !important;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+        }
+        
+        .leaflet-popup-tip {
+            background: rgba(30, 41, 59, 0.95) !important;
+        }
+
+        .popup-content {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .popup-content h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--accent-blue);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        .popup-row {
+            display: flex;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .popup-row span.label {
+            color: var(--text-muted);
+            width: 100px;
+            font-weight: 600;
+        }
+
+        .popup-row span.val {
+            flex: 1;
+            color: #f8fafc;
+        }
+        
+        #empty-state {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 41, 59, 0.9);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            z-index: 1000;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(8px);
+        }
+        #empty-state h2 { margin-bottom: 16px; color: #fff; }
+        #empty-state p { color: var(--text-muted); }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="header">
+            <h1>Monitor de Medidores</h1>
+            <p>Estado de la red en tiempo real</p>
+        </div>
+
+        <div class="upload-container">
+            <label for="csv-upload" class="upload-label">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                </svg>
+                Cargar archivo CSV
+            </label>
+            <input type="file" id="csv-upload" accept=".csv">
+        </div>
+
+        <div class="kpi-container">
+            <div class="kpi-card" id="card-total">
+                <div>
+                    <div class="kpi-title">Total Equipos</div>
+                    <div class="kpi-value" id="kpi-total">0</div>
+                </div>
+                <div style="color: var(--accent-blue);">
+                    <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+            </div>
+            <div class="kpi-card" id="card-sc">
+                <div>
+                    <div class="kpi-title">Sin ComunicaciÃ³n</div>
+                    <div class="kpi-value" id="kpi-sc" style="color: var(--accent-red);">0</div>
+                </div>
+                <div style="color: var(--accent-red);">
+                    <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"></path></svg>
+                </div>
+            </div>
+            <div class="kpi-card" id="card-la">
+                <div>
+                    <div class="kpi-title">Lectura Anormal</div>
+                    <div class="kpi-value" id="kpi-la" style="color: var(--accent-yellow);">0</div>
+                </div>
+                <div style="color: var(--accent-yellow);">
+                    <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Buscar medidor o cliente...">
+        </div>
+        <div class="list-header">Listado de Equipos</div>
+        <div class="medidor-list" id="medidor-list">
+            <!-- List populated by JS -->
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div id="empty-state">
+            <h2>Cargando Datos...</h2>
+            <p>Buscando 'RepTerminales.csv' en la carpeta...</p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        const baseCoords = {"DMPA00082594":{"banda":"Monobanda","ub":"-","coords":"-33.8111111, -60.6011111"},"DCCA00011661":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00082579, "},"DMGA00043089":{"banda":"Monobanda","ub":"Camino Rural No. 1025","coords":"-33.833202, -60.712808"},"DMGA00046090":{"banda":"Monobanda","ub":"-","coords":"-34.02265, -60.6510333"},"DMGA00046110":{"banda":"Monobanda","ub":"Camino Rural 1028","coords":"-33.8410013, -60.7342047"},"DMGA00049403":{"banda":"Monobanda","ub":"Camino Rural 1054","coords":"-33.800628, -60.837999"},"5":{"banda":"Baterias 12/20","ub":"","coords":""},"DMPA00077200":{"banda":"Monobanda","ub":"San Nicolas 814","coords":"-33.8967997, -60.5740536"},"DMPA00082692":{"banda":"Monobanda","ub":"25 de Mayo 623 P: L Depto: 1","coords":"-33.8952779, -60.5726831"},"DMGA00046107":{"banda":"Monobanda","ub":"Ruta 188 63","coords":"-33.8383318, -60.4973665"},"DMGA00049361":{"banda":"Monobanda","ub":"Ruta 178   6","coords":"-33.8753344, -60.6271328"},"DMGA00043087":{"banda":"Monobanda","ub":"Camino Rural No. 1068","coords":"-33.757106, -60.945387"},"DTGA00040008":{"banda":"Monobanda","ub":"Camino Rural 1021","coords":"-33.851508, -60.682583"},"DIGA00114069":{"banda":"Monobanda","ub":"Champagnat 2499","coords":"-33.8640579, -60.5734959"},"DTPA00078204":{"banda":"Monobanda","ub":"San Martin 647","coords":"-33.895867, -60.5742325"},"DCCA00011549":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00038560  DMPA00038578  DMPA00038579  DMPA00082590   DTPA00040776, "},"DTGA00043861":{"banda":"Monobanda","ub":"Parque Industrial Pergamino 5","coords":"-33.924603, -60.562858"},"DTGA00178364":{"banda":"Monobanda","ub":"-","coords":"-33.8211927, -60.7765603"},"6":{"banda":"Baterias 12/12","ub":"","coords":""},"DMPA00036757":{"banda":"Monobanda","ub":"11 De Septiembre 834 P. 2 Dto. A","coords":"-33.8973435, -60.5771727"},"DMWA00113906":{"banda":"Monobanda","ub":"Colon 905 P: 7 Depto: A","coords":"-33.8943613, -60.5819948"},"DMWA00123866":{"banda":"Monobanda","ub":"Ja Peña Ucre 527","coords":"-33.8175098, -60.4852931"},"DMPA00038578":{"banda":"Monobanda","ub":"Pueyrredon 566 P. 3","coords":"-33.8940492, -60.5725168"},"Cant.":{"banda":"Elementos","ub":"","coords":""},"DMPA00082646":{"banda":"Monobanda","ub":"San Nicolas 599","coords":"-33.8952367, -60.5735038"},"DMPA00038561":{"banda":"Monobanda","ub":"Florida 815 Piso 7 Dto. B","coords":"-33.8966719, -60.5764334"},"DTGA00185661":{"banda":"Monobanda","ub":"Salto Camino Rural 601","coords":"-33.97688, -60.53268333"},"DMPA00082740":{"banda":"Monobanda","ub":"San Martin 642 ","coords":"-33.8960528, -60.5743047"},"DMPA00077591":{"banda":"Monobanda","ub":"San Nicolas 435 Piso 2 Dto. 7","coords":"-33.8933126, -60.5726587"},"3":{"banda":"Radio MDS 9810","ub":"","coords":""},"DTGA00043857":{"banda":"Monobanda","ub":"Camino Rural 1009","coords":"-33.879941, -60.675105"},"DCCA00011174":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00036757, "},"DIGA00037046":{"banda":"Multibanda","ub":"-","coords":"-33.6561185, -60.6923145"},"DTGA00185663":{"banda":"Monobanda","ub":"Alberdi 3600 (Pozo 86)","coords":"-33.9178105, -60.5985934"},"DMPA00077191":{"banda":"Monobanda","ub":"Dorrego 596","coords":"-33.896598, -60.5740286"},"DMGA00049414":{"banda":"Monobanda","ub":"Pueyrredon 514","coords":"-33.8943642, -60.5716959"},"DCCA00011656":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00038554, "},"DIWA00106923":{"banda":"Multibanda","ub":"Merced 199","coords":"-33.8906529, -60.572818"},"DTGA00043855":{"banda":"Monobanda","ub":"Ruta178 No. 100","coords":"-33.734967, -60.924006"},"DMPA00077520":{"banda":"Monobanda","ub":"-","coords":"-, -"},"DMGA00049362":{"banda":"Monobanda","ub":"Ruta 178  1 Dto. 16","coords":"-33.876023, -60.759588"},"DTGA00043866":{"banda":"Monobanda","ub":"Camino Rural 1061","coords":"-33.769628, -60.853456"},"DTGA00043523":{"banda":"Monobanda","ub":"Merced 199","coords":"-33.8907275, -60.5727925"},"DMPA00036585":{"banda":"Monobanda","ub":"San Nicolas 820","coords":"-33.8968637, -60.5740559"},"DMGA00046086":{"banda":"Monobanda","ub":"Bv. Colon 752 Dto. 4","coords":"-33.893379, -60.580707"},"DMGA00043088":{"banda":"Monobanda","ub":"Camino Rural No. 1067","coords":"-33.756694, -60.928402"},"DTGA00038796":{"banda":"Monobanda","ub":"-","coords":"-34.0491333, -60.64105"},"DTGA00074791":{"banda":"Monobanda","ub":"Magnani S/N","coords":"-33.8865969, -60.5514994"},"DCCA00011628":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00077481, "},"2":{"banda":"Placa Fuente","ub":"","coords":"1 + en arreglo por Leo, "},"DTGA00074790":{"banda":"Monobanda","ub":"Peña Camino Rural 2 Dto. 16","coords":"-33819948, -60.523287"},"DIGA00157261":{"banda":"Multibanda","ub":"San Martin 579","coords":"-33.8959745, -60.5733916"},"DMPA00082705":{"banda":"Monobanda","ub":"San Nicolas 636 Piso 3 Dto. 2","coords":"-33.8952514, -60.5733315"},"DTGA00036869":{"banda":"Monobanda","ub":"Camino Rural No. 1071","coords":"-33.71502, -60.9226"},"DMPA00077481":{"banda":"Monobanda","ub":"Florida 508 P:5 Dto: A","coords":"-33.8991593, -60.5733502"},"DTGA00074789":{"banda":"Monobanda","ub":"Peña Camino Rural 500","coords":"-33.8185172, -60.5186578"},"DMGA00043011":{"banda":"Monobanda","ub":"Camino Rural Peña","coords":"-, -"},"DCCA00011572":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00036758  DMPA00082646, "},"DMGA00031748":{"banda":"Monobanda","ub":"-","coords":"-34.0518, -60.6763"},"DTGA00178561":{"banda":"Monobanda","ub":"Camino Rural Fontezuela No. 804","coords":"-33.8878916, -60.4974174"},"DIGA00047342":{"banda":"Monobanda","ub":"-","coords":"-33.7367530129, -60.9658606698"},"DCCA00011578":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00077681  DMPA00077682  DMPA00077684  DMPA00082545  DMPA00082550  DMPA00082739  DTPA00078160  DTPA00078186  DTPA00079420, "},"DTGA00162204":{"banda":"Monobanda","ub":"Camino Rural 1082","coords":"-33.848938, -60.685963"},"DMWA00113937":{"banda":"Monobanda","ub":"Bvard. Colon 905 P.3 Dto. B","coords":"-33.8943644, -60.5819963"},"DMPA00038554":{"banda":"Monobanda","ub":"Mitre  619  P.3 Dto. C","coords":"-33.8945808, -60.5733526"},"DTGA00043837":{"banda":"Monobanda","ub":"Camino Rural 1044","coords":"-33.82907, -60.782499"},"DTGA00079155":{"banda":"Monobanda","ub":"Carpani Costa 1163","coords":"-33.9060322, -60.5557484"},"DTGA00043854":{"banda":"Monobanda","ub":"Camino Rural No. 1013","coords":"-33.86471, -60.674613"},"DMGA00043007":{"banda":"Monobanda","ub":"-","coords":"-34.0287078, -60.6021215"},"DCCA00011632":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00077520  DMPA00077591  DMPA00077613, "},"DTGA00079166":{"banda":"Monobanda","ub":"-","coords":"-33.9522666, -60.60798333"},"DMPA00082579":{"banda":"Monobanda","ub":"San Nicolas 527 P: 3 Depto: A","coords":"-33.8941588, -60.57301"},"DTPA00078160":{"banda":"Monobanda","ub":"San Nicolas 515","coords":"-33.894088, -60.5729461"},"DMGA00031014":{"banda":"Monobanda","ub":"-","coords":"-34.00265, -60.67075"},"DMGA00043005":{"banda":"Monobanda","ub":"Camino Rural 1015","coords":"-33.893551, -60.69744"},"DTGA00178363":{"banda":"Monobanda","ub":"Basualdo Camino Rural 89","coords":"-34.026304, -60.652689"},"DMPA00082584":{"banda":"Monobanda","ub":"San Nicolas 676","coords":"-33.8957155, -60.5735231"},"DTGA00159422":{"banda":"Monobanda","ub":"-","coords":"-34.0392666, -60.6394166"},"DTGA00178564":{"banda":"Monobanda","ub":"-","coords":"-33.9913802, -60.6285551"},"DMGA00043014":{"banda":"Monobanda","ub":"Camino Rural No. 42","coords":"-33.722005, -60.910804"},"DTGA00043461":{"banda":"Monobanda","ub":"Camino Rural Coopzop No. 1056","coords":"-33.772053, -60.814285"},"DTGA00080142":{"banda":"Monobanda","ub":"-","coords":"-33.9972833, -60.65215"},"DTGA00043873":{"banda":"Monobanda","ub":"Camino Rural 1031 ","coords":"-33.83239, -60.745203"},"DMGA00049399":{"banda":"Monobanda","ub":"Ruta 178  No. 7","coords":"-33.87574, -60.625933"},"DMGA00031726":{"banda":"Monobanda","ub":"-","coords":"-34.0296536, -60.6532753"},"DIGA00106818":{"banda":"Multibanda","ub":"-","coords":"-33.629462, -60.8170228"},"DIGA00098868":{"banda":"Multibanda","ub":"-","coords":"-34.0678229, -60.6376004"},"DMPA00038586":{"banda":"Monobanda","ub":"Florida 815 P.10 Dto. A","coords":"-33.8966719, -60.5764334"},"DMPA00077555":{"banda":"Monobanda","ub":"San Nicolas 601","coords":"-33.894786, -60.5732252"},"DTGA00043844":{"banda":"Monobanda","ub":"Colon 760 Dto. 9","coords":"-33.5812312, -60.5812312"},"DMPA00077478":{"banda":"Monobanda","ub":"San Nicolas P.1 Dto. 4","coords":"-33.8970107, -60.5743458"},"DIGA00150969":{"banda":"Multibanda","ub":"Manuel Galvez 2400","coords":"-33.9146965456, -60.565977"},"DMGA00049413":{"banda":"Monobanda","ub":"-","coords":"-34.02641, -60.652316"},"DTGA00036863":{"banda":"Monobanda","ub":"-","coords":"-34.0369, -60.66385"},"DTPA00079420":{"banda":"Monobanda","ub":"Av de Mayo 508","coords":"-33.8933958, -60.5715724"},"DTGA00039589":{"banda":"Monobanda","ub":"Camino Rural 1027","coords":"-33.828874, -60.700991"},"DCCA00011224":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00038561   DMPA00038585  DMPA00038586, "},"DMWA00098393":{"banda":"Monobanda","ub":"Tres de Febrero 524","coords":"-33.901339, -60.5749134"},"DTGA00103746":{"banda":"Monobanda","ub":"Dr. Alem 953","coords":"-33.89887688, -60.5717726"},"DTGA00162220":{"banda":"Monobanda","ub":"Ruta 32   1324","coords":"-33.9202278, -60.5583639"},"DMPA00082642":{"banda":"Monobanda","ub":"San Nicolas 821 Piso 1 Dto. 1","coords":"-33.8967938, -60.5742483"},"DMPA00077531":{"banda":"Monobanda","ub":"Dorrego 639 P: 1 Depto: 6","coords":"-33.8963408, -60.5743782"},"DMGA00049398":{"banda":"Monobanda","ub":"Camino Rural No. 1072","coords":"-33.727105, -60.945187"},"Stock":{"banda":"","ub":"","coords":""},"DTGA00043527":{"banda":"Monobanda","ub":"Camino Rural No. 1023","coords":"-33.840386, -60.672487"},"DTGA00040379":{"banda":"Monobanda","ub":"Camino Rural Coopzop No. 1011 Bis","coords":"-33.8643383, -60.6632308"},"DTGA00039587":{"banda":"Monobanda","ub":"Frondizi 850 (Pqe. Industrial Pergamino)","coords":"-33.9233, -60.5677"},"DMPA00082699":{"banda":"Monobanda","ub":"San Nicolas 645","coords":"-33.8952669, -60.5735881"},"0":{"banda":"Perillas L/R","ub":"","coords":""},"DTGA00178362":{"banda":"Monobanda","ub":"-","coords":"-34.042186, -60.639846"},"DTGA00043874":{"banda":"Monobanda","ub":"-","coords":"-34.0492933, -60.6410286"},"DTGA00036866":{"banda":"Monobanda","ub":"-","coords":"-34.0403166, -60.63735"},"DTGA00039970":{"banda":"Monobanda","ub":"Frondizi 1150","coords":"-33.926486, -60.565074"},"DMPA00038562":{"banda":"Monobanda","ub":"25 de Mayo 650 P:6","coords":"-33.8956139, -60.5725977"},"DTPA00078194":{"banda":"Monobanda","ub":"San Nicolas 637","coords":"-33.8951274, -60.5735126"},"DMPA00082650":{"banda":"Monobanda","ub":"San Nicolas 636 Piso 3 Dto. A","coords":"-33.8952514, -60.5733315"},"DMPA00077613":{"banda":"Monobanda","ub":"San Nicolas 493","coords":"-33.8937917, -60.5728397"},"DUPX00000299":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00077478, "},"DCCA00011610":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00036683  DMPA00077473  DMPA00077531  DMPA00077555  DMPA00082699 DMPA00082740  DTPA00078194  DTPA00078204, "},"DTPA00076201":{"banda":"Multibanda","ub":"San Nicolas 459","coords":"-33.8935988, -60.5728401"},"DMPA00038560":{"banda":"Monobanda","ub":"Pueyrredon 519","coords":"-33.8941514, -60.5720066"},"DMGA00040687":{"banda":"Monobanda","ub":"-","coords":"-34.01285, -60.63933"},"DTGA00079086":{"banda":"Monobanda","ub":"Camino Rural Coopzop No.1070","coords":"-33.719662, -60.92781"},"DTGA00043841":{"banda":"Monobanda","ub":"Camino Rural 1059","coords":"-33.784074, -60.858366"},"DMGA00049387":{"banda":"Monobanda","ub":"-","coords":"-33.9994, -60.63263"},"DMPA00038585":{"banda":"Monobanda","ub":"Florida 815 Piso 1 Dto. A","coords":"-33.8966124, -60.5764601"},"DTPA00078186":{"banda":"Monobanda","ub":"Av de Mayo 530","coords":"-33.8933614, -60.5716831"},"DTGA00040378":{"banda":"Monobanda","ub":"Ruta 32   1","coords":"-33.9552716, -60.5424876"},"DTPA00040776":{"banda":"Monobanda","ub":"Pueyrredon 570 Piso 4","coords":"-33.8940492, -60.5725168"},"DTGA00079104":{"banda":"Monobanda","ub":"-","coords":"-33.9675, -60.653266"},"DTGA00036865":{"banda":"Monobanda","ub":"-","coords":"-34.02918333, -60.65548333"},"DMPA00036766":{"banda":"Monobanda","ub":"Florida 807 Piso 6","coords":"-33.896709, -60.5763538"},"DTGA00036868":{"banda":"Monobanda","ub":"P. Fondizi 1150   Dto. 1","coords":"-33.9206767, -60.5612103"},"DMGA00043092":{"banda":"Monobanda","ub":"-","coords":"-34.0230333, -60.5705"},"DMPA00082590":{"banda":"Monobanda","ub":"San Nicolas 422","coords":"-33.8933545, -60.5724876"},"DMGA00049960":{"banda":"Monobanda","ub":"-","coords":"-34.038436, -60.634317"},"DTGA00043849":{"banda":"Monobanda","ub":"-","coords":"-33.875111, -60.601302"},"DMGA00040647":{"banda":"Monobanda","ub":"Camino Rural No. 1069","coords":"-33.73577, -60.923113"},"DMPA00036758":{"banda":"Monobanda","ub":"San Nicolas 555 Dto. 22","coords":"-33.8943184, -60.5731575"},"DMPA00077473":{"banda":"Monobanda","ub":"San Martin 632","coords":"-33.8960883, -60.5742245"},"DTGA00040380":{"banda":"Monobanda","ub":"San Nicolas 570","coords":"-33.8943922, -60.5729819"},"DMGA00049381":{"banda":"Monobanda","ub":"Ortiz Basualdo No. 1","coords":"-33.9580245, -60.6384772"},"DMPA00038579":{"banda":"Monobanda","ub":"Pueyrredon 536","coords":"-33.8940788, -60.572484"},"DTGA00178365":{"banda":"Monobanda","ub":"-","coords":"-34.03191, -60.66141"},"DTGA00044271":{"banda":"Monobanda","ub":"-","coords":"-33.9592, -60.5839"},"DIGA00081686":{"banda":"Multibanda","ub":"-","coords":"-33.6838377, -60.8231085"},"DCCA00011324":{"banda":"CONCENTRADOR","ub":"","coords":"DMPA00038562  DMPA00082584  DMPA00082650  DMPA00082692, "}}
+;
+        
+        // URL del archivo CSV en Gist (GitHub)
+        const CSV_URL = 'https://gist.githubusercontent.com/cdscelp/5e3212303519a45c522179946f52adcf/raw/9bd1ad9efe9abf65363774328cc07e2edef8aade/gistfile1.txt';
+
+        // Función para cargar el CSV desde GitHub
+        async function fetchCSVFromUrl(url) {
+            try {
+                console.log('Cargando CSV desde:', url);
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const text = await response.text();
+                
+                // Verificar que es CSV válido
+                if (text.includes('Reporte de Terminales') || text.includes('Nro. de Serie')) {
+                    return text;
+                }
+                throw new Error('El archivo no parece ser un CSV válido');
+            } catch (err) {
+                throw new Error(`Error al cargar CSV: ${err.message}`);
+            }
+        }
+
+        let medidoresData = [];
+        let validMedidores = [];
+        let map;
+        let markersGroup;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Map with street tiles
+            map = L.map('map').setView([-33.89, -60.57], 11); 
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            markersGroup = L.markerClusterGroup({
+                iconCreateFunction: function(cluster) {
+                    return L.divIcon({ 
+                        html: '<div style="background: rgba(59, 130, 246, 0.8); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.5);">' + cluster.getChildCount() + '</div>',
+                        className: 'custom-cluster-icon', 
+                        iconSize: L.point(40, 40) 
+                    });
+                }
+            });
+            map.addLayer(markersGroup);
+
+            // Mostrar estado de carga
+            document.getElementById('empty-state').innerHTML = `
+                <h2>Conectando con Google Drive...</h2>
+                <p>Descargando datos del archivo CSV público...</p>
+            `;
+
+            // Auto-load CSV from GitHub
+            fetchCSVFromUrl(CSV_URL)
+                .then(text => {
+                    parseCSV(text);
+                })
+                .catch(err => {
+                    console.error("Error cargando CSV:", err);
+                    document.getElementById('empty-state').innerHTML = `
+                        <h2>Error al cargar datos</h2>
+                        <p style="font-size: 14px; margin-top: 10px; line-height: 1.6;">
+                        Error: ${err.message}<br><br>
+                        <strong>Solución:</strong> Verificá que la URL del archivo CSV en el código sea correcta.<br>
+                        También podés cargar el archivo manualmente haciendo clic en <strong>"Cargar archivo CSV"</strong>.<br><br>
+                        <button onclick="location.reload()" style="padding: 8px 16px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer;">Reintentar</button>
+                        </p>
+                    `;
+                });
+
+            // Handle manual CSV upload (bypasses CORS restrictions)
+            const csvUpload = document.getElementById('csv-upload');
+            if (csvUpload) {
+                csvUpload.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    // Show temporary loading state
+                    const emptyState = document.getElementById('empty-state');
+                    emptyState.style.display = 'block';
+                    emptyState.innerHTML = `
+                        <h2>Procesando Archivo...</h2>
+                        <p>Cargando los datos del archivo seleccionado...</p>
+                    `;
+
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        const text = evt.target.result;
+                        parseCSV(text);
+                    };
+                    reader.onerror = function(evt) {
+                        console.error("Error al leer el archivo:", evt);
+                        alert("Hubo un error al leer el archivo CSV.");
+                        emptyState.style.display = 'block';
+                        emptyState.innerHTML = `<h2>Error al leer archivo</h2><p>Por favor intenta de nuevo.</p>`;
+                    };
+                    // Read file content with proper encoding (iso-8859-1) for accents/special characters
+                    reader.readAsText(file, 'iso-8859-1');
+                });
+            }
+
+            // Search input listener
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    renderList(e.target.value);
+                });
+            }
+        });
+
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            const newData = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                // Match rows starting with alphanumeric IDs like DIGA00037046
+                if (line.match(/^[A-Z0-9]+;/)) {
+                    const parts = line.split(';');
+                    if (parts.length < 18) continue;
+                    
+                    const medidor = parts[0].trim();
+                    const estado = parts[2].trim();
+                    const ultimoRegistro = parts[3].trim();
+                    const titular = parts[10].trim();
+                    
+                    let conectividad = "";
+                    if (parts.length >= 19) {
+                        conectividad = parts[18].trim();
+                    }
+                    const observaciones = conectividad ? 'Conectividad: ' + conectividad : '';
+
+                    const obj = {
+                        MEDIDOR: medidor,
+                        ESTADO: estado,
+                        "ULTIMA LECTURA": "-",
+                        "FECHA/HORA": ultimoRegistro,
+                        CLIENTE: titular,
+                        OBSERVACIONES: observaciones,
+                        coordenadas: "-",
+                        UBICACION: "-",
+                        BANDA: "-"
+                    };
+
+                    // Merge base coordinates
+                    if (baseCoords[medidor]) {
+                        obj.coordenadas = baseCoords[medidor].coords || "-";
+                        obj.UBICACION = baseCoords[medidor].ub || "-";
+                        obj.BANDA = baseCoords[medidor].banda || "-";
+                    }
+
+                    newData.push(obj);
+                }
+            }
+
+            medidoresData = newData;
+            updateDashboard();
+        }
+
+        function updateDashboard() {
+            // Hide empty state
+            document.getElementById('empty-state').style.display = 'none';
+            
+            // Clear previous markers
+            markersGroup.clearLayers();
+            validMedidores = [];
+
+            let countTotal = 0;
+            let countSC = 0;
+            let countLA = 0;
+
+            medidoresData.forEach(item => {
+                countTotal++;
+                
+                const estado = item.ESTADO || '';
+                let statusClass = 'status-other';
+                if (estado.toLowerCase().includes('sin comunicacion')) {
+                    countSC++;
+                    statusClass = 'status-sc';
+                } else if (estado.toLowerCase().includes('lectura anormal')) {
+                    countLA++;
+                    statusClass = 'status-la';
+                }
+
+                // Parse coordinates
+                let lat = null, lng = null;
+                if (item.coordenadas && item.coordenadas !== '-' && item.coordenadas !== '-, -') {
+                    const parts = item.coordenadas.split(',');
+                    if (parts.length === 2) {
+                        lat = parseFloat(parts[0].trim());
+                        lng = parseFloat(parts[1].trim());
+                    }
+                }
+
+                if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
+                    validMedidores.push(item);
+
+                    // Custom marker icon based on status
+                    const isSC = statusClass === 'status-sc';
+                    const markerColor = isSC ? '#ef4444' : (statusClass === 'status-la' ? '#eab308' : '#3b82f6');
+                    
+                    const customIcon = L.divIcon({
+                        className: 'custom-pin',
+                        html: '<svg width="30" height="30" viewBox="0 0 24 24" fill="' + markerColor + '" stroke="#fff" stroke-width="2"><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 30],
+                        popupAnchor: [0, -30]
+                    });
+
+                    const marker = L.marker([lat, lng], { icon: customIcon });
+
+                    const popupHtml = `
+                        <div class="popup-content">
+                            <h3>${item.MEDIDOR}</h3>
+                            <div class="popup-row"><span class="label">Cliente:</span><span class="val">${item.CLIENTE || '-'}</span></div>
+                            <div class="popup-row"><span class="label">Banda:</span><span class="val">${item.BANDA || '-'}</span></div>
+                            <div class="popup-row"><span class="label">Ubicación:</span><span class="val">${item.UBICACION || '-'}</span></div>
+                            <div class="popup-row"><span class="label">Estado:</span><span class="val" style="color: ${markerColor}; font-weight: 600;">${item.ESTADO || '-'}</span></div>
+                            <div class="popup-row"><span class="label">Fecha/Hora:</span><span class="val">${item['FECHA/HORA'] || '-'}</span></div>
+                            <div class="popup-row"><span class="label">Observaciones:</span><span class="val">${item.OBSERVACIONES || '-'}</span></div>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupHtml);
+                    markersGroup.addLayer(marker);
+                    item._marker = marker;
+                }
+            });
+
+            // If there are valid medidores, adjust bounds
+            if (validMedidores.length > 0) {
+                const group = new L.featureGroup(validMedidores.map(m => m._marker));
+                map.fitBounds(group.getBounds(), { padding: [50, 50] });
+            }
+
+            // Update KPIs
+            document.getElementById('kpi-total').textContent = countTotal;
+            document.getElementById('kpi-sc').textContent = countSC;
+            document.getElementById('kpi-la').textContent = countLA;
+
+            renderList();
+        }
+
+        function renderList(query = '') {
+            const listContainer = document.getElementById('medidor-list');
+            listContainer.innerHTML = '';
+            const lowerQuery = query.toLowerCase();
+            let displayCount = 0;
+
+            for (const item of medidoresData) {
+                if (!item.MEDIDOR) continue;
+                
+                const medidorMatch = (item.MEDIDOR || '').toLowerCase().includes(lowerQuery);
+                const clienteMatch = (item.CLIENTE || '').toLowerCase().includes(lowerQuery);
+                
+                if (query === '' || medidorMatch || clienteMatch) {
+                    if (displayCount >= 150) continue; // Limit UI lag
+                    displayCount++;
+                    
+                    let statusClass = 'status-other';
+                    const estado = item.ESTADO || '';
+                    if (estado.toLowerCase().includes('sin comunicacion')) statusClass = 'status-sc';
+                    else if (estado.toLowerCase().includes('lectura anormal')) statusClass = 'status-la';
+
+                    const listItem = document.createElement('div');
+                    listItem.className = 'medidor-item';
+                    listItem.innerHTML = `
+                        <strong>${item.MEDIDOR}</strong>
+                        <div style="color: #94a3b8; margin-bottom: 4px;">${item.CLIENTE || '-'}</div>
+                        <span class="status-badge ${statusClass}">${estado || 'Desconocido'}</span>
+                    `;
+                    
+                    if (item._marker) {
+                        listItem.addEventListener('click', () => {
+                            const parts = item.coordenadas.split(',');
+                            const lat = parseFloat(parts[0].trim());
+                            const lng = parseFloat(parts[1].trim());
+                            map.flyTo([lat, lng], 16, { duration: 1.5 });
+                            setTimeout(() => {
+                                item._marker.openPopup();
+                            }, 1500);
+                        });
+                    } else {
+                        listItem.style.opacity = '0.5';
+                        listItem.title = 'Sin coordenadas vÃ¡lidas';
+                    }
+
+                    listContainer.appendChild(listItem);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
