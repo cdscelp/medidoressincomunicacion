@@ -95,18 +95,20 @@
         .mobile-only {
             display: none;
             position: fixed;
-            top: 12px;
-            left: 12px;
+            bottom: 24px;
+            right: 24px;
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 8px;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
             backdrop-filter: blur(8px);
-            z-index: 100;
+            z-index: 9999;
             color: var(--text-main);
             cursor: pointer;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
         
         .mobile-only svg {
@@ -124,10 +126,10 @@
                 position: fixed;
                 left: -100%;
                 top: 0;
-                height: 100vh;
+                height: 100dvh;
                 width: 85%;
                 max-width: 320px;
-                z-index: 2000;
+                z-index: 10000;
                 transition: left 0.3s ease;
                 box-shadow: 4px 0 24px rgba(0,0,0,0.5);
             }
@@ -142,19 +144,17 @@
                 right: 0;
                 bottom: 0;
                 background: rgba(0,0,0,0.5);
-                z-index: 1500;
+                z-index: 9000;
             }
             .sidebar-overlay.open {
                 display: block;
             }
             body {
-                flex-direction: column;
+                display: block;
             }
             .map-container {
-                height: calc(100vh - 60px);
-            }
-            .sidebar {
-                height: calc(100vh - 60px);
+                height: 100dvh;
+                width: 100vw;
             }
         }
 
